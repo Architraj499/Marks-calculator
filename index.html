@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CUET Score Analyzer</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <div class="header">
+
+            <h1>🎯 CUET Score Analyzer</h1>
+
+            <p>
+                Upload Response Sheet & Answer Key
+                to get instant subject-wise analysis
+            </p>
+
+        </div>
+
+        <!-- UPLOAD SECTION -->
+
+        <div class="upload-section">
+
+            <div class="upload-card">
+
+                <label for="responsePdf">
+                    📄 Response Sheet PDF
+                </label>
+
+                <input
+                    type="file"
+                    id="responsePdf"
+                    accept=".pdf">
+
+            </div>
+
+            <div class="upload-card">
+
+                <label for="answerKeyPdf">
+                    📑 Answer Key PDF
+                </label>
+
+                <input
+                    type="file"
+                    id="answerKeyPdf"
+                    accept=".pdf">
+
+            </div>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button id="calculateBtn">
+
+            🚀 Analyze Score
+
+        </button>
+
+        <!-- RESULT SECTION -->
+
+        <div id="result"
+             class="result-card">
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

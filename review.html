@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CUET Review</title>
+
+<link rel="stylesheet" href="review.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📚 CUET Question Review</h1>
+
+    <div class="upload-box">
+
+        <input
+        type="file"
+        id="responsePdf"
+        accept=".pdf">
+
+        <button id="reviewBtn">
+            Load Questions
+        </button>
+
+    </div>
+
+    <div id="questionContainer"></div>
+
+</div>
+
+<script src="review.js"></script>
+
+</body>
+</html>
