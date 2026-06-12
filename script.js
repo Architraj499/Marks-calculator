@@ -6,10 +6,10 @@ const btn = document.getElementById("calculateBtn");
 btn.addEventListener("click", async () => {
 
     const responseFile =
-    document.getElementById("responsePdf").files[0];
+    document.getElementById("responsePdf").files;
 
     const answerKeyFile =
-    document.getElementById("answerKeyPdf").files[0];
+    document.getElementById("answerKeyPdf").files;
 
     if(!responseFile || !answerKeyFile)
     {
