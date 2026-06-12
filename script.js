@@ -11,17 +11,24 @@ btn.addEventListener("click", async () => {
     const answerKeyFile =
     document.getElementById("answerKeyPdf").files;
 
-    if(!responseFile || !answerKeyFile)
-    {
-        alert("Please upload both PDFs");
-        return;
-    }
+   if(
+    responseFile.length === 0 ||
+    answerKeyFile.length === 0
+)
+{
+    alert("Please upload both PDFs");
+    return;
+}
 
-    const responseText =
-    cleanPdfText(await extractText(responseFile));
+const responseText =
+cleanPdfText(
+await extractMultipleFiles(responseFile)
+);
 
-    const answerText =
-    cleanPdfText(await extractText(answerKeyFile));
+const answerText =
+cleanPdfText(
+await extractMultipleFiles(answerKeyFile)
+);
 
     // =========================
     // ANSWER KEY PARSER
@@ -411,6 +418,20 @@ function cleanPdfText(text)
 // =========================
 // PDF READER
 // =========================
+async function extractMultipleFiles(files)
+{
+    let combinedText = "";
+
+    for(const file of files)
+    {
+        const text =
+        await extractText(file);
+
+        combinedText += text + "\n";
+    }
+
+    return combinedText;
+}
 
 async function extractText(file)
 {
