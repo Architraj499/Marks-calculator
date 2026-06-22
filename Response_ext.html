@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+CUET Response Extractor
+</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial,sans-serif;
+
+    background:#f5f7fb;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+.container{
+
+    width:100%;
+    max-width:900px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:10px;
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:25px;
+}
+
+.upload{
+
+    margin-bottom:20px;
+}
+
+input[type=file]{
+
+    width:100%;
+
+    padding:12px;
+
+    border:2px dashed #dcdcdc;
+
+    border-radius:12px;
+}
+
+button{
+
+    width:100%;
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    margin-top:15px;
+}
+
+button:hover{
+
+    opacity:.9;
+}
+
+.output{
+
+    margin-top:25px;
+
+    background:#111827;
+
+    color:#e5e7eb;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    max-height:500px;
+
+    overflow:auto;
+
+    white-space:pre-wrap;
+}
+
+.stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:20px;
+}
+
+.card{
+
+    background:#f8fafc;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    min-width:150px;
+}
+
+.card h2{
+
+    color:#2563eb;
+}
+#copyBtn{
+
+    background:#16a34a;
+
+    margin-top:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+🎯 CUET Response Extractor
+</h1>
+
+<p class="subtitle">
+Upload your CUET Response Sheet PDF
+</p>
+
+<div class="upload">
+
+<input
+type="file"
+id="pdf"
+accept=".pdf">
+
+</div>
+
+<button id="extractBtn">
+Extract Responses
+</button>
+<button id="copyBtn">
+📋 Copy Output
+</button>
+
+<div class="stats">
+
+<div class="card">
+
+<h2 id="questionCount">
+0
+</h2>
+
+<p>
+Questions Found
+</p>
+
+</div>
+
+</div>
+
+<pre
+class="output"
+id="output">
+Waiting for PDF...
+</pre>
+
+</div>
+
+<script src="Response_ext.js"></script>
+
+</body>
+
+</html>

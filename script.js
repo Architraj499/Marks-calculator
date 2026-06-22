@@ -152,13 +152,18 @@ for(let i = 0; i < answerIds.length; i += 5)
             option4Id: match[5],
             chosenOption: match[6]
         });
+
+        document.getElementById("result").innerHTML =
+`<pre>${JSON.stringify(responses, null, 2)}</pre>`;
     }
 
     console.log(
         "Response Questions:",
         responses.length
     );
-
+console.log(responses);
+window.responses = responses;
+return;
     // =========================
     // OVERALL STATS
     // =========================
