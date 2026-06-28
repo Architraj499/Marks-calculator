@@ -163,7 +163,7 @@ for(let i = 0; i < answerIds.length; i += 5)
     );
 console.log(responses);
 window.responses = responses;
-return;
+
     // =========================
     // OVERALL STATS
     // =========================
@@ -361,7 +361,7 @@ document.getElementById("result").innerHTML = `
 
     <h1>${score}</h1>
 
-    <p>Predicted Score</p>
+    <p>Raw Score</p>
 
 </div>
 
