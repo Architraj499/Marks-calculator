@@ -156,6 +156,7 @@ for(let i = 0; i < answerIds.length; i += 5)
         document.getElementById("result").innerHTML =
 `<pre>${JSON.stringify(responses, null, 2)}</pre>`;
     }
+ 
 
     console.log(
         "Response Questions:",
@@ -400,6 +401,33 @@ document.getElementById("result").innerHTML = `
 ${subjectHtml}
 
 `;
+   // =========================
+// PREPARE DATA FOR ASPRIENTS
+// =========================
+
+const finalScores = {};
+
+for (const subjectCode in subjectStats) {
+    finalScores[subjectCode] = subjectStats[subjectCode].score;
+}
+
+const payload = {
+    totalScore: score,
+    subjects: finalScores,
+    timestamp: Date.now()
+};
+
+const encoded = btoa(
+    JSON.stringify(payload)
+);
+
+// Wait 3 seconds so user can see result
+setTimeout(() => {
+
+    window.location.href =
+        `https://architraj499.github.io/Asprients/import-score.html?data=${encodeURIComponent(encoded)}`;
+
+}, 3000);
 });
 
 // =========================
